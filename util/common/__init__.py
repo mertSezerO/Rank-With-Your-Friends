@@ -1,0 +1,1 @@
+from .category_type import CategoryType
