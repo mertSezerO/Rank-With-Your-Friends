@@ -1,3 +1,4 @@
+import uuid
 from abc import ABC
 
 from util.common.category_type import CategoryType
@@ -6,7 +7,8 @@ class ListElement(ABC):
 
     def __init__(self, name, rank, category: CategoryType):
         super().__init__()
-        self._name = name
+        self._id = str(uuid.uuid4())
+        self.name = name
         self._rank = rank
         self._category = category
 
@@ -24,3 +26,11 @@ class ListElement(ABC):
     @property
     def category(self) -> str:
         return self._category
+    
+    @property.setter
+    def category(self, category: CategoryType) -> None:
+        self._category = category
+
+    @property
+    def id(self) -> str:
+        return self._id
