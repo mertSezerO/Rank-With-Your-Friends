@@ -16,7 +16,7 @@ class ListElement(ABC):
     def rank(self) -> int: 
         return self._rank
     
-    @property.setter
+    @rank.setter
     def rank(self, rank) -> None:
         if(rank <= 0):
             raise ValueError("Rank cannot be less than 0!")
@@ -27,7 +27,7 @@ class ListElement(ABC):
     def category(self) -> str:
         return self._category
     
-    @property.setter
+    @category.setter
     def category(self, category: CategoryType) -> None:
         self._category = category
 

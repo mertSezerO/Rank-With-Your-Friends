@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
 
-from models.list_element import ListElement
+from .list_element import ListElement
 
 # Abstract Base Class for lists
-class List(ABC):
+class ListEntity(ABC):
     
     def __init__(self, author: str):
         super().__init__()
@@ -52,5 +52,5 @@ class List(ABC):
 
     # Will be implemented by subclasses according to their own type & logic
     @abstractmethod
-    def _sort_list_elements(self):
+    def sort_list_elements(self):
         pass
