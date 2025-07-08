@@ -1,3 +1,4 @@
+import copy
 from abc import ABC, abstractmethod
 
 from .list_element import ListElement
@@ -18,13 +19,9 @@ class ListEntity(ABC):
     @property
     def author(self) -> str:
         return self._author
-    
-    # Find the element in the list by its rank
-    def get_element_by_rank(self, rank: int) -> ListElement:
-        try:
-            return next(element for element in self._elements if element.rank == rank)
-        except StopIteration:
-            raise AttributeError(f"No element found with rank: {rank}")
+
+    def get_elements_list(self) -> list[ListElement] :
+        return copy.deepcopy(self._elements)
     
     # Find the element in the list by its id
     def get_element_by_id(self, element_id: str) -> ListElement:
@@ -36,14 +33,6 @@ class ListEntity(ABC):
     # Add new element to the list
     def add_element(self, new_element: ListElement) -> None:
         self._elements.append(new_element)
-
-    # Change the rank of the element by given id
-    def change_element_rank(self, new_rank: int, element_id: str) -> None:
-        try:
-            element = self.get_element_by_id(element_id)
-            element.rank = new_rank
-        except (AttributeError, ValueError) as e:
-            print(str(e))
     
     # Parse and set the elements from an external source
     @abstractmethod
