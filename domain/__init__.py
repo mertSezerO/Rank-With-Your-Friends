@@ -1,0 +1,1 @@
+from .shared_list_generator import SharedListGenerator
