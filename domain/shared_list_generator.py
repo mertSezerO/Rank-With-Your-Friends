@@ -42,7 +42,7 @@ class SharedListGenerator:
         list_elements = list.get_elements_list()
 
         for i, tier in enumerate(tiers):
-            tier_scores[tier] = (1 + (1/len(list_elements))) ** (len(tiers) - i)
+            tier_scores[tier] = (1 + (1/len(tiers))) ** (len(tiers) - i)
         
         score_dict = {}
         for element in list_elements:
@@ -67,6 +67,7 @@ class SharedListGenerator:
 
         return final_score_dict
     
+    # Reorder and create tiers using k-means algorithm
     def __reorder(self, dict: dict[str, float]) -> None:
         pass
 
