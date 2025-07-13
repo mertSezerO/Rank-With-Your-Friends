@@ -1,6 +1,7 @@
 from .list import ListEntity
 from .rank_item import RankItem
 
+
 class RankList(ListEntity):
 
     def __init__(self, author):
@@ -21,7 +22,7 @@ class RankList(ListEntity):
         except (AttributeError, ValueError) as e:
             print(str(e))
 
-    def load_premade_list(self):
+    def load_premade_list(self, premade_list: list[RankItem]):
         pass
 
     def sort_list_elements(self) -> list[RankItem]:

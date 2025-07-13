@@ -3,6 +3,7 @@ from abc import ABC
 
 from util.common.category_type import CategoryType
 
+
 class ListElement(ABC):
 
     def __init__(self, name, rank, category: CategoryType):
@@ -13,20 +14,20 @@ class ListElement(ABC):
         self._category = category
 
     @property
-    def rank(self) -> int: 
+    def rank(self) -> int:
         return self._rank
-    
+
     @rank.setter
     def rank(self, rank) -> None:
-        if(rank <= 0):
+        if rank <= 0:
             raise ValueError("Rank cannot be less than 0!")
         else:
             self._rank = rank
-    
+
     @property
     def category(self) -> str:
         return self._category
-    
+
     @category.setter
     def category(self, category: CategoryType) -> None:
         self._category = category
