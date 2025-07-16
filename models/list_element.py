@@ -1,28 +1,16 @@
 import uuid
 from abc import ABC
 
-from util.common.category_type import CategoryType
+from util.common import CategoryType
 
 
 class ListElement(ABC):
 
-    def __init__(self, name, rank, category: CategoryType):
+    def __init__(self, name, category: CategoryType):
         super().__init__()
         self._id = str(uuid.uuid4())
         self.name = name
-        self._rank = rank
         self._category = category
-
-    @property
-    def rank(self) -> int:
-        return self._rank
-
-    @rank.setter
-    def rank(self, rank) -> None:
-        if rank <= 0:
-            raise ValueError("Rank cannot be less than 0!")
-        else:
-            self._rank = rank
 
     @property
     def category(self) -> str:

@@ -52,7 +52,7 @@ class SharedListGenerator:
 
         score_dict = {}
         for element in list_elements:
-            score_dict[element.name] = tier_scores[element.tier]
+            score_dict[element.name] = tier_scores[tiers[element.tier]]
 
         list.score_dict = score_dict
 

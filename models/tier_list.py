@@ -12,7 +12,7 @@ class TierList(ListEntity):
             self.__tiers = ["S", "A", "B", "C", "D", "F"]
 
     @property
-    def tiers(self):
+    def tiers(self) -> list[str]:
         return self.__tiers
 
     def change_tier_name(self, index: int, new_name) -> None:
@@ -27,7 +27,7 @@ class TierList(ListEntity):
             tiers.append(self.__tiers[i])
 
         self.__tiers = tiers
-
+    
     def load_premade_list(self, premade_list: list[TierItem]):
         pass
 
