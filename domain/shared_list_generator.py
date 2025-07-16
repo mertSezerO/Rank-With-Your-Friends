@@ -71,10 +71,13 @@ class SharedListGenerator:
         for list in user_lists:
             if len(final_score_dict) == 0:
                 final_score_dict = {**(list.score_dict)}
+                del list.score_dict
                 continue
 
             for key in list.score_dict.keys():
                 final_score_dict[key] *= list.score_dict[key]
+            
+            del list.score_dict
 
         self.final_score_dict = final_score_dict
 
@@ -95,9 +98,11 @@ class SharedListGenerator:
 
         labels = kmeans.labels_
 
-        clustered_data = {key: label for key, label in zip(keys, labels)}
+        self.clustered_data = {key: label for key, label in zip(keys, labels)}
 
         # Initialize builders for constructing list
+
+        del self.final_score_dict
 
     # Type agnostic construction method
     def __construct_list(self) -> None:
