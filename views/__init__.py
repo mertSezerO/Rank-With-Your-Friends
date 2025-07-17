@@ -1,1 +1,2 @@
-from screen_handler import ScreenHandler
+from .screen_handler import ScreenHandler
+from .app import RankTierApp
