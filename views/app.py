@@ -12,4 +12,5 @@ class RankTierApp(App):
 
     def __create_screens(self):
         # Generic method implementation
-        self.screen_handler.add_widget(EntryScreen(name=SCREEN_ENTRY))
+        screen = EntryScreen(name=SCREEN_ENTRY, screen_handler=self.screen_handler)
+        self.screen_handler.add_widget(screen)

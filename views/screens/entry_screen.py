@@ -1,4 +1,4 @@
-from kivy.uix.screenmanager import Screen
+from .app_screen import AppScreen
 
-class EntryScreen(Screen):
+class EntryScreen(AppScreen):
     pass
