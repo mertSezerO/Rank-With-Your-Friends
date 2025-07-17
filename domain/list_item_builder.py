@@ -1,5 +1,5 @@
-from builder_register import REGISTERED_CONSTRUCTORS
-from util.common.category_type import CategoryType
+from util import REGISTERED_CONSTRUCTORS
+from util.common import CategoryType
 
 class ListItemBuilder:
 

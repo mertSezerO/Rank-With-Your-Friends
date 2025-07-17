@@ -1,3 +1,2 @@
 from .shared_list_generator import SharedListGenerator
 from .list_item_builder import ListItemBuilder
-from .builder_register import register_constructor

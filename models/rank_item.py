@@ -1,5 +1,5 @@
 from .list_element import ListElement
-from domain import register_constructor
+from util import register_constructor
 from util.common import CategoryType
 
 
